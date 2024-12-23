@@ -7,6 +7,7 @@ export const todoReducer = (state, action) => {
     switch (action.type) {
         case "ADD_TODO":
             return {
+                ...state,
                 todo_list: [
                     ...state.todo_list,
                     { ...action.payload, id: uuid(), isCompleted: false },
@@ -14,17 +15,24 @@ export const todoReducer = (state, action) => {
             };
         case "REMOVE_TODO":
             return {
+                ...state,
                 todo_list: state.todo_list.filter(
                     (todo) => todo.id !== action.payload
                 ),
             };
         case "TOGGLE_COMPLETE":
             return {
+                ...state,
                 todo_list: state.todo_list.map((todo) =>
                     todo.id === action.payload
                         ? { ...todo, isCompleted: !todo.isCompleted }
                         : todo
                 ),
+            };
+        case "SET_FILTER":
+            return {
+                ...state,
+                filter: action.payload,
             };
         default:
             return state;
@@ -35,10 +43,23 @@ export const todoReducer = (state, action) => {
 export const TaskContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(todoReducer, {
         todo_list: [],
+        filter: "all",
+    });
+
+    const filteredTodos = state.todo_list.filter((todo) => {
+        if (state.filter === "completed") {
+            return todo.isCompleted;
+        } else if (state.filter === "not-completed") {
+            return !todo.isCompleted;
+        } else {
+            return true;
+        }
     });
 
     return (
-        <TaskContext.Provider value={{ ...state, dispatch }}>
+        <TaskContext.Provider
+            value={{ todo_list: filteredTodos, filter: state.filter, dispatch }}
+        >
             {children}
         </TaskContext.Provider>
     );
