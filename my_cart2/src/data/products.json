@@ -1,0 +1,72 @@
+[
+	{
+		"id": 1,
+		"name": "Wireless Headphones",
+		"description": "Noise-cancelling over-ear headphones with a comfortable fit.",
+		"price": 99.99,
+		"image": "https://dummyimage.com/150x150/cccccc/000000&text=Wireless+Headphones"
+	},
+	{
+		"id": 2,
+		"name": "Smartphone Stand",
+		"description": "Adjustable stand for smartphones and tablets.",
+		"price": 19.99,
+		"image": "https://dummyimage.com/150x150/cccccc/000000&text=Smartphone+Stand"
+	},
+	{
+		"id": 3,
+		"name": "Portable Charger",
+		"description": "10,000mAh portable charger with fast charging support.",
+		"price": 29.99,
+		"image": "https://dummyimage.com/150x150/cccccc/000000&text=Portable+Charger"
+	},
+	{
+		"id": 4,
+		"name": "Bluetooth Speaker",
+		"description": "Compact speaker with powerful bass and long battery life.",
+		"price": 49.99,
+		"image": "https://dummyimage.com/150x150/cccccc/000000&text=Bluetooth+Speaker"
+	},
+	{
+		"id": 5,
+		"name": "Fitness Tracker",
+		"description": "Track your daily activity and monitor your heart rate.",
+		"price": 79.99,
+		"image": "https://dummyimage.com/150x150/cccccc/000000&text=Fitness+Tracker"
+	},
+	{
+		"id": 6,
+		"name": "Laptop Sleeve",
+		"description": "Durable and lightweight laptop sleeve for 13-inch laptops.",
+		"price": 15.99,
+		"image": "https://dummyimage.com/150x150/cccccc/000000&text=Laptop+Sleeve"
+	},
+	{
+		"id": 7,
+		"name": "Gaming Mouse",
+		"description": "Ergonomic gaming mouse with customizable buttons.",
+		"price": 39.99,
+		"image": "https://dummyimage.com/150x150/cccccc/000000&text=Gaming+Mouse"
+	},
+	{
+		"id": 8,
+		"name": "USB-C Hub",
+		"description": "Multi-port hub with USB-C, HDMI, and USB-A support.",
+		"price": 34.99,
+		"image": "https://dummyimage.com/150x150/cccccc/000000&text=USB-C+Hub"
+	},
+	{
+		"id": 9,
+		"name": "Mechanical Keyboard",
+		"description": "Backlit mechanical keyboard with tactile switches.",
+		"price": 69.99,
+		"image": "https://dummyimage.com/150x150/cccccc/000000&text=Mechanical+Keyboard"
+	},
+	{
+		"id": 10,
+		"name": "Wireless Mouse",
+		"description": "Compact and portable wireless mouse with long battery life.",
+		"price": 25.99,
+		"image": "https://dummyimage.com/150x150/cccccc/000000&text=Wireless+Mouse"
+	}
+]
