@@ -94,3 +94,50 @@ h2 {
 .add-button:hover {
     background-color: #04b58a;
 }
+
+.empty-todo-list {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+.filter,
+.delete {
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+button {
+	cursor: pointer;
+}
+
+.filter button,
+.delete button {
+    padding: 3px 8px;
+    border: 1px solid gray;
+}
+
+.filter button {
+    margin-right: 5px;
+}
+
+.delete button {
+	background-color: #FF4C4C;
+	color: white;
+	border: 1px solid red;
+}
+
+.delete button:hover {
+	background-color: #D43A3A;
+}
+
+.filter .active {
+    background-color: #06d6a0;
+    color: #fff;
+    border: 1px solid rgb(207, 207, 207);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+}

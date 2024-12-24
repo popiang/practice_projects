@@ -25,7 +25,7 @@ function TaskItem({ todo }) {
             <div className="task-actions">
                 <input
                     type="checkbox"
-                    value={todo.isCompleted}
+                    checked={todo.isCompleted}
                     onChange={handleToggleComplete}
                 />
 				<button onClick={handleDelete} className="delete-button">X</button>

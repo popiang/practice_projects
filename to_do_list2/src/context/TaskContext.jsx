@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import { v4 as uuid } from "uuid";
 
 export const TaskContext = createContext();
@@ -19,6 +19,11 @@ export const todoReducer = (state, action) => {
                 todo_list: state.todo_list.filter(
                     (todo) => todo.id !== action.payload
                 ),
+            };
+        case "CLEAR_TODO":
+            return {
+                todo_list: [],
+                filter: "",
             };
         case "TOGGLE_COMPLETE":
             return {
@@ -42,8 +47,8 @@ export const todoReducer = (state, action) => {
 /* eslint-disable react/prop-types */
 export const TaskContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(todoReducer, {
-        todo_list: [],
-        filter: "all",
+        todo_list: JSON.parse(localStorage.getItem("todo_list")) || [],
+        filter: "",
     });
 
     const filteredTodos = state.todo_list.filter((todo) => {
@@ -55,6 +60,10 @@ export const TaskContextProvider = ({ children }) => {
             return true;
         }
     });
+
+	useEffect(() => {
+		localStorage.setItem("todo_list", JSON.stringify(state.todo_list))
+	}, [state.todo_list]);
 
     return (
         <TaskContext.Provider
