@@ -16,17 +16,26 @@ body {
 
 .logo {
     font-size: 28px;
+	font-weight: 900;
 }
 
-.cartLink {
+.cart-link {
+	display: flex;
+	gap: 4px;
     font-size: 18px;
     margin-right: 10px;
+	position: relative;
 }
 
 .logo a,
-.cartLink a {
+.cart-link a {
     text-decoration: none;
     color: inherit;
+}
+
+.cart-count-notification {
+	color: green;
+	font-weight: bold;
 }
 
 .product-list-container {
@@ -188,7 +197,7 @@ body {
 }
 
 .cart-empty {
-	margin-top: 40px;
+	margin: 40px 0;
 	text-align: center;
 }
 
@@ -202,4 +211,13 @@ body {
 .cart-footer span {
 	font-size: 16px;
 	font-weight: bold;
+}
+
+.cart-footer .checkout {
+	border: none;
+	padding: 5px 10px;
+	background-color: green;
+	margin-top: 50px;
+	color: #fff;
+	border-radius: 5px;
 }

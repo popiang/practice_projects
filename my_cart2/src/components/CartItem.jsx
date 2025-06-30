@@ -21,7 +21,7 @@ const CartItem = ({ item }) => {
             <img src={item.image} alt="Image" />
             <div className="cart-item-desc">
                 <h2>{item.name}</h2>
-                <p>{item.description}</p>
+                <span>{item.description}</span>
             </div>
             <div className="cart-item-quantity">
                 <button onClick={handleIncrement}>+</button>

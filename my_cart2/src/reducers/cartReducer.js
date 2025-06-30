@@ -51,10 +51,21 @@ export const cartReducer = (state, action) => {
                 totalPrice: 0,
                 isLoading: false,
             };
-		case "SET_IS_LOADING":
-			return {
-				...state, isLoading: action.payload
-			}
+        case "SET_IS_LOADING":
+            return {
+                ...state,
+                isLoading: action.payload,
+            };
+        case "SET_TOTAL_PRICE":
+            return {
+                ...state,
+                totalPrice: action.payload,
+            };
+        case "SET_TOTAL_ITEM":
+            return {
+                ...state,
+                totalItem: action.payload,
+            };
         default:
             return state;
     }

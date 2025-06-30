@@ -13,7 +13,9 @@ const Cart = () => {
         <div className="cart-container">
             <div className="cart-header">
                 <h3>Shopping Cart</h3>
-                <button onClick={handleRemoveAll}>Remove All</button>
+                {cart.length > 0 && (
+                    <button onClick={handleRemoveAll}>Remove All</button>
+                )}
             </div>
 
             {cart.length > 0 ? (
@@ -22,12 +24,14 @@ const Cart = () => {
                 <p className="cart-empty">Your cart is empty</p>
             )}
 
-            <div className="cart-footer">
-                <div>
-                    Total: <span>{formatCurrency(totalPrice)}</span>
+            {cart.length > 0 && (
+                <div className="cart-footer">
+                    <div>
+                        Total: <span>{formatCurrency(totalPrice)}</span>
+                    </div>
+                    <button className="checkout">Checkout</button>
                 </div>
-                <button>Checkout</button>
-            </div>
+            )}
         </div>
     );
 };
