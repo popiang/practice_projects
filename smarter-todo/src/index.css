@@ -1,0 +1,90 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	background-color:cornflowerblue;
+	border: none;
+	border-radius: 5px;
+	height: 450px;
+	width: 400px;
+	margin: 10px auto;
+	overflow-y: auto;
+}
+
+.header {
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 12px;
+	color: #fff;
+}
+
+.todo-form {
+	text-align: center;
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: center;
+}
+
+.todo-form input {
+	padding: 5px 8px;
+	width: 220px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+.todo-form button {
+	padding: 5px 8px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+
+.filter {
+	text-align: center;
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+}
+
+.filter label {
+	margin-right: 5px;
+	margin-bottom: 1px;
+	cursor: pointer;
+}
+
+.all, .active, .completed {
+	display: flex;
+	align-items: center;
+}
+
+.todo-list {
+	border-radius: 5px;
+	width: 350px;
+	margin: 10px auto;
+	list-style: none;
+	padding: 5px;
+}
+
+.todo-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 5px;
+	background-color: #fff;
+	padding: 5px 15px;
+	border-radius: 5px;
+}
+
+.todo-item button {
+	padding: 4px 8px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: lightcoral;
+	color: #fff;
+}
