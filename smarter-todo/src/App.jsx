@@ -51,15 +51,6 @@ function App() {
         <div className="container">
             <Header />
 
-<<<<<<< HEAD
-            <TodoForm
-                newTask={newTask}
-                setNewTask={setNewTask}
-                handleSubmit={handleSubmit}
-            />
-			
-            <FilterBar filter={filter} handleFilter={handleFilter} />
-=======
             <AddTodoForm
                 handleSubmit={handleSubmit}
                 newTask={newTask}
@@ -67,7 +58,6 @@ function App() {
             />
 
             <Filter filter={filter} handleFilter={handleFilter} />
->>>>>>> 738efb0a9cea7c03e4d844339575da8fe5ae6bd1
 
             {todos && (
                 <TodoList
