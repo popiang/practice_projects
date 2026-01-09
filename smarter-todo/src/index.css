@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+body {
+	font-family: "Inter", sans-serif;
+}
+
 .container {
 	background-color:cornflowerblue;
 	border: none;
@@ -78,15 +82,36 @@
 	justify-content: space-between;
 	margin-bottom: 5px;
 	background-color: #fff;
-	padding: 5px 15px;
+	padding: 5px;
 	border-radius: 5px;
 }
 
-.todo-item button {
+.buttons {
+	display: flex;
+	gap: 5px;
+}
+
+.buttons button {
 	padding: 4px 8px;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-	background-color: lightcoral;
 	color: #fff;
+	background-color: #bbb;
+}
+
+.buttons .delete-button {
+	background-color: lightcoral;
+}
+
+.buttons .save-button {
+	background-color: green;
+}
+
+.edit-input {
+	padding: 3px 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 100%;
+	margin-right: 5px;
 }

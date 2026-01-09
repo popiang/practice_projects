@@ -25,6 +25,20 @@ function App() {
         setTodos(newTodos);
     };
 
+    const handleEdit = (id, newTodo) => {
+        console.log(id);
+        console.log(newTodo);
+        setTodos(
+            todos.map((todo) => {
+                if (todo.id === id) {
+                    return { ...todo, task: newTodo };
+                } else {
+                    return todo;
+                }
+            })
+        );
+    };
+
     const handleToggleComplete = (id) => {
         console.log(id);
         setTodos(
@@ -60,6 +74,7 @@ function App() {
                     filter={filter}
                     handleDelete={handleDelete}
                     handleToggleComplete={handleToggleComplete}
+                    handleEdit={handleEdit}
                 />
             )}
         </div>
