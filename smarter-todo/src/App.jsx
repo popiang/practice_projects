@@ -1,7 +1,12 @@
 import { useState } from "react";
 import Header from "./components/Header";
+<<<<<<< HEAD
 import TodoForm from "./components/TodoForm";
 import FilterBar from "./components/FilterBar";
+=======
+import AddTodoForm from "./components/AddTodoForm";
+import Filter from "./components/Filter";
+>>>>>>> 738efb0a9cea7c03e4d844339575da8fe5ae6bd1
 import TodoList from "./components/TodoList";
 
 function App() {
@@ -46,6 +51,7 @@ function App() {
         <div className="container">
             <Header />
 
+<<<<<<< HEAD
             <TodoForm
                 newTask={newTask}
                 setNewTask={setNewTask}
@@ -53,6 +59,15 @@ function App() {
             />
 			
             <FilterBar filter={filter} handleFilter={handleFilter} />
+=======
+            <AddTodoForm
+                handleSubmit={handleSubmit}
+                newTask={newTask}
+                setNewTask={setNewTask}
+            />
+
+            <Filter filter={filter} handleFilter={handleFilter} />
+>>>>>>> 738efb0a9cea7c03e4d844339575da8fe5ae6bd1
 
             {todos && (
                 <TodoList
