@@ -1,6 +1,6 @@
 import TodoItem from "./TodoItem";
 
-const TodoList = ({ todos, filter, handleDelete, handleToggleComplete, handleEdit }) => {
+const TodoList = ({ todos, filter, handleDelete, handleToggleComplete, handleEdit, isSaveSuccess, saveMessage }) => {
     return (
         <ul className="todo-list">
             {todos
@@ -14,7 +14,9 @@ const TodoList = ({ todos, filter, handleDelete, handleToggleComplete, handleEdi
                         todo={todo}
                         handleDelete={handleDelete}
                         handleToggleComplete={handleToggleComplete}
-						handleEdit={handleEdit}
+                        handleEdit={handleEdit}
+                        isSaveSuccess={isSaveSuccess}
+                        saveMessage={saveMessage}
                     />
                 ))}
         </ul>

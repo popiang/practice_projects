@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import AddTodoForm from "./components/AddTodoForm";
 import Filter from "./components/Filter";
 import TodoList from "./components/TodoList";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
     const [newTask, setNewTask] = useState("");
@@ -11,13 +12,22 @@ function App() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        const sanitizedNewTask = validateTodo(newTask);
+
+        if (!sanitizedNewTask) {
+            return false;
+        }
+
         const newTaskObject = {
-            id: Date.now(),
-            task: newTask,
+            id: uuidv4(),
+            task: sanitizedNewTask,
             completed: false,
         };
         setTodos([...todos, newTaskObject]);
         setNewTask("");
+
+		return true;
     };
 
     const handleDelete = (id) => {
@@ -26,21 +36,27 @@ function App() {
     };
 
     const handleEdit = (id, newTodo) => {
-        console.log(id);
-        console.log(newTodo);
+		
+		const sanitizedTodo = validateTodo(newTodo);
+
+        if (!sanitizedTodo) {
+            return false;
+        }
+
         setTodos(
             todos.map((todo) => {
                 if (todo.id === id) {
-                    return { ...todo, task: newTodo };
+                    return { ...todo, task: sanitizedTodo };
                 } else {
                     return todo;
                 }
             })
         );
+
+		return true;
     };
 
     const handleToggleComplete = (id) => {
-        console.log(id);
         setTodos(
             todos.map((todo) => {
                 if (todo.id === id) {
@@ -56,6 +72,11 @@ function App() {
         setFilter(filterInput);
     };
 
+    const validateTodo = (todo) => {
+        const sanitizedTodo = todo.trim();
+        return sanitizedTodo !== "" ? sanitizedTodo : null;
+    };
+
     return (
         <div className="container">
             <Header />
@@ -68,7 +89,7 @@ function App() {
 
             <Filter filter={filter} handleFilter={handleFilter} />
 
-            {todos && (
+            {todos.length > 0 && (
                 <TodoList
                     todos={todos}
                     filter={filter}
@@ -77,6 +98,7 @@ function App() {
                     handleEdit={handleEdit}
                 />
             )}
+            {todos.length === 0 && <p className="empty-todos">Todo list is empty</p>}
         </div>
     );
 }
