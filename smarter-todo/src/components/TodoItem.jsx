@@ -59,9 +59,15 @@ const TodoItem = ({ todo, handleDelete, handleToggleComplete, handleEdit }) => {
                                 className="delete-button"
                                 onClick={() => handleDelete(todo.id)}
                             >
-                                Delete
+                                <span className="material-symbols-outlined">
+                                    delete
+                                </span>
                             </button>
-                            <button onClick={() => editTodo()}>Edit</button>
+                            <button onClick={() => editTodo()}>
+                                <span className="material-symbols-outlined">
+                                    edit
+                                </span>
+                            </button>
                         </>
                     )}
                     {isEdit && (
@@ -70,9 +76,15 @@ const TodoItem = ({ todo, handleDelete, handleToggleComplete, handleEdit }) => {
                                 className="save-button"
                                 onClick={() => saveEdit()}
                             >
-                                Save
+                                <span className="material-symbols-outlined">
+                                    save
+                                </span>
                             </button>
-                            <button onClick={() => cancelEdit()}>Cancel</button>
+                            <button onClick={() => cancelEdit()}>
+                                <span className="material-symbols-outlined">
+                                    arrow_back
+                                </span>
+                            </button>
                         </>
                     )}
                 </div>

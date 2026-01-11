@@ -24,7 +24,9 @@ const AddTodoForm = ({ handleSubmit, newTask, setNewTask }) => {
                     value={newTask}
                     onChange={(e) => setNewTask(e.target.value)}
                 />
-                <button type="submit">+</button>
+                <button type="submit">
+					<span className="material-symbols-outlined">add</span>
+				</button>
             </div>
             {!isSaveSuccess && message && (
                 <p className="input-error-message">{message}</p>
