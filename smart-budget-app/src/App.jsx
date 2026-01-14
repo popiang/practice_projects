@@ -1,7 +1,13 @@
+import ExpenseForm from "./components/ExpenseForm";
+import ExpenseList from "./components/ExpenseList";
+import Header from "./components/Header";
+
 function App() {
     return (
         <div>
-            <h1>Smart Budget App</h1>
+            <Header />
+			<ExpenseList />
+			<ExpenseForm />
         </div>
     );
 }
