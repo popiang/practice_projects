@@ -3,13 +3,15 @@ import ExpenseList from "./components/ExpenseList";
 import Header from "./components/Header";
 
 function App() {
-    return (
-        <div>
-            <Header />
-			<ExpenseList />
-			<ExpenseForm />
-        </div>
-    );
+  return (
+    <div>
+      <p>hi there</p>
+      <Header />
+      <ExpenseList />
+      <ExpenseForm />
+    </div>
+  );
 }
 
 export default App;
+
