@@ -1,7 +1,7 @@
 const Header = () => {
 	return (
 		<div>
-			<h1>Smart Budget</h1>			
+			<h1>Smart Budget Tracker</h1>			
 		</div>
 	);
 }

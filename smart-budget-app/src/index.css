@@ -24,8 +24,8 @@ body {
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
     line-height: 1.5;
-    color: #1f2937; /* neutral dark */
-    background-color: #f9fafb; /* light gray */
+    color: #fff; /* neutral dark */
+    background-color: #212121; /* light gray */
 }
 
 /* 5. Make media elements easier to work with */
@@ -74,4 +74,23 @@ button {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+/*****************************************/
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.expense-list__item,
+.summary-content {
+	padding: 8px;
+	background-color: antiquewhite;
+	color: #212121;
+	margin-bottom: 5px;
+	margin: 5px;
+	border-radius: 8px;
+	max-width: 300px;
 }
