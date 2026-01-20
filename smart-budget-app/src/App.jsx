@@ -1,26 +1,26 @@
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 import Header from "./components/Header";
-import Summary from "./components/Summary";
+import Summary from "./components/ExpenseSummary";
+import { useState } from "react";
 
 function App() {
-    const summary = {
-        total_spent: 120,
-        remaining: 380,
-    };
-
-    const expenses = [
+    const [expenses, setExpenses] = useState([
         { id: 1, title: "Shampoo", amount: 12 },
         { id: 2, title: "Book", amount: 15 },
         { id: 3, title: "Fruit", amount: 8 },
-    ];
+    ]);
+
+	const addExpense = (expense) => {
+		setExpenses(prev => [...prev, expense]);
+	}
 
     return (
         <div className="container">
             <Header />
-            <Summary summary={summary} />
+            <Summary expenses={expenses} />
             <ExpenseList expenses={expenses} />
-            <ExpenseForm />
+            <ExpenseForm addExpense={addExpense} />
         </div>
     );
 }

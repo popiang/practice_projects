@@ -2,15 +2,15 @@ const ExpenseList = ({ expenses }) => {
     return (
         <div className="expense-list">
             <h3 className="expense-list__header">Expense List</h3>
-            <li className="expense-list__list">
+            <ul className="expense-list__list">
                 {expenses &&
                     expenses.map((expense) => (
-                        <ul className="expense-list__item">
+                        <li className="expense-list__item" key={expense.id}>
                             <p>Title: {expense.title}</p>
                             <p>Amount(RM): {expense.amount} </p>
-                        </ul>
+                        </li>
                     ))}
-            </li>
+            </ul>
         </div>
     );
 };
